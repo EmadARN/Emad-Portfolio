@@ -2,8 +2,8 @@
   <img src="./public/readMe.png" alt="nextdotjs" />
 
   <div align="right">
-    <img src="./public/readMe2.png" alt="nextdotjs" />
-    <img src="./public/readMe3.png" alt="nextdotjs" />
+ <img src="./public/readMe2.png" alt="nextdotjssa" />
+    <img src="./public/readMe3.png" alt="nextdotjsas" />
   </div>
 
     
