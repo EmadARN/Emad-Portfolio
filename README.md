@@ -1,8 +1,9 @@
 <div align="center">
   <img src="./public/readMe.png" alt="nextdotjs" />
-  <div>
+
+  <div align="right">
     <img src="./public/readMe2.png" alt="nextdotjs" />
-  <img src="./public/readMe3.png" alt="nextdotjs" />
+    <img src="./public/readMe3.png" alt="nextdotjs" />
   </div>
 
     
