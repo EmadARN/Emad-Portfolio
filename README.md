@@ -1,5 +1,10 @@
 <div align="center">
   <img src="./public/readMe.png" alt="nextdotjs" />
+  <div>
+    <img src="./public/readMe2.png" alt="nextdotjs" />
+  <img src="./public/readMe3.png" alt="nextdotjs" />
+  </div>
+
     
 <div>
     <img src="https://img.shields.io/badge/-Next_JS-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=000000" alt="nextdotjs" />
