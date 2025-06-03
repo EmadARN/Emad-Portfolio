@@ -11,7 +11,7 @@ export const gridItems = [
     title: "I prioritize client collaboration, fostering open communication ",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] ",
-    imgClassName: "w-full h-full",
+    imgClassName: "w-full h-full ",
     titleClassName: "justify-end max-w-96 font-bold ",
     img: "/b1.png",
     spareImg: "",
@@ -242,6 +242,14 @@ export const projectData = [
         images: [],
       },
     },
+    technologies: [
+      "/tech/typescript.png",
+      "/tech/next.png",
+      "/tech/rest-api.png",
+      "/tech/mui.png",
+      "/tech/react-query.png",
+      "/tech/rhf.png",
+    ],
   },
   {
     id: "urban-dreams",
