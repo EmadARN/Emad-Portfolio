@@ -3,6 +3,7 @@ import Link from "next/link";
 import { StickyScroll } from "./ui/StickyScrolReveal";
 import { AnimatedTestimonials } from "./ui/animatedTestimonials";
 import useMoveBack from "@/hooks/userMoveBack";
+import Image from "next/image";
 
 interface Section {
   title: string;
@@ -15,6 +16,7 @@ interface Project {
   description: string;
   time_line: string;
   live_link: string;
+  technologies?: string[]; // ← تکنولوژی‌ها به صورت آدرس عکس
   details: {
     landing: Section;
     auth: Section;
@@ -34,6 +36,7 @@ export default function ProjectDetailsContent({ project }: Props) {
     project.details;
 
   const moveBack = useMoveBack();
+
   const landingSection =
     landing.images.length > 0
       ? {
@@ -47,14 +50,12 @@ export default function ProjectDetailsContent({ project }: Props) {
               loop
               muted
               playsInline
-              className=" rounded-lg shadow-md w-full h-[15rem]  object-cover"
+              className="rounded-lg shadow-md w-full md:h-[15rem] object-cover"
               style={{
                 aspectRatio: "16/9",
                 filter: "grayscale(10%) contrast(1.2) saturate(1.4)",
               }}
-            >
-              Your browser does not support the video tag.
-            </video>
+            />
           ),
         }
       : null;
@@ -70,7 +71,7 @@ export default function ProjectDetailsContent({ project }: Props) {
       content:
         section.images.length > 0 ? (
           <AnimatedTestimonials
-            testimonials={section.images.map((img, i) => ({
+            testimonials={section.images.map((img) => ({
               quote: section.desc,
               name: section.title,
               designation: "",
@@ -82,7 +83,6 @@ export default function ProjectDetailsContent({ project }: Props) {
         ),
     }));
 
-  // 👇 اگر landing داشت، اضافه‌اش کن به اول content
   if (landingSection) {
     dynamicContent.unshift(landingSection);
   }
@@ -95,27 +95,61 @@ export default function ProjectDetailsContent({ project }: Props) {
       >
         &larr; Back
       </button>
+
       <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
       <p className="text-gray-700 mb-4">{project.description}</p>
+
       <div>
-        <h2>📅Time Line:</h2>
+        <h2 className="text-2xl font-bold text-purple-600 mb-4">
+          📅 Time Line:
+        </h2>
         <p className="text-sm pl-2 text-gray-500 mb-4">{project.time_line}</p>
       </div>
-      <div>
-        <h2>📱Web demo:</h2>
+
+      <div className="w-1/2">
+        <h2 className="text-2xl font-bold text-purple-600 mb-4">
+          📱 Web demo:
+        </h2>
         <Link
           href={project.live_link}
           target="_blank"
           className="text-blue-500 pl-2 mb-6 block"
         >
-          view live
+          View Live
         </Link>
       </div>
+
+      {/*  تکنولوژی‌های استفاده‌شده */}
+      {project.technologies && project.technologies.length > 0 && (
+        <div className="py-6">
+          <h2 className="text-2xl font-bold text-purple-600 mb-4">
+            🔧 Technologies Used
+          </h2>
+          <div className="flex flex-wrap gap-6 justify-center items-center bg-gradient-to-r from-purple-900 via-violet-800 to-indigo-900 p-6 rounded-xl shadow-lg">
+            {project.technologies.map((tech, i) => (
+              <div
+                key={i}
+                className="w-20 h-20 bg-white rounded-full p-2 shadow-md hover:scale-105 transition-transform relative"
+              >
+                <Image
+                  src={tech}
+                  alt={`tech-${i}`}
+                  fill
+                  className="object-contain rounded-full"
+                  sizes="80px"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       <div className="py-8 w-full" id="experience">
         <h4 className="heading">
-          project <span className="text-purple"> details</span>
+          Project <span className="text-purple">Details</span>
         </h4>
       </div>
+
       <div className="w-full py-4">
         <StickyScroll content={dynamicContent} />
       </div>

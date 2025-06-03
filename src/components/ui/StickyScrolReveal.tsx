@@ -14,16 +14,13 @@ export const StickyScroll = ({
   }[];
   contentClassName?: string;
 }) => {
-  console.log("content", content);
-
-  const [activeCard, setActiveCard] = React.useState(0);
+  const [activeCard, setActiveCard] = useState(0);
   const ref = useRef<any>(null);
   const { scrollYProgress } = useScroll({
-    // uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
-    // target: ref
     container: ref,
     offset: ["start start", "end start"],
   });
+
   const cardLength = content.length;
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -41,15 +38,11 @@ export const StickyScroll = ({
     setActiveCard(closestBreakpointIndex);
   });
 
-  const backgroundColors = [
-    "#0f172a", // slate-900
-    "#000000", // black
-    "#171717", // neutral-900
-  ];
+  const backgroundColors = ["#0f172a", "#000000", "#171717"];
   const linearGradients = [
-    "linear-gradient(to bottom right, #06b6d4, #10b981)", // cyan-500 to emerald-500
-    "linear-gradient(to bottom right, #ec4899, #6366f1)", // pink-500 to indigo-500
-    "linear-gradient(to bottom right, #f97316, #eab308)", // orange-500 to yellow-500
+    "linear-gradient(to bottom right, #06b6d4, #10b981)",
+    "linear-gradient(to bottom right, #ec4899, #6366f1)",
+    "linear-gradient(to bottom right, #f97316, #eab308)",
   ];
 
   const [backgroundGradient, setBackgroundGradient] = useState(
@@ -68,37 +61,35 @@ export const StickyScroll = ({
       className="relative flex h-[30rem] justify-center space-x-10 overflow-y-auto rounded-md p-10"
       ref={ref}
     >
-      <div className="div relative flex items-start px-4">
+      {/* متون و تصاویر در حالت موبایل */}
+      <div className="relative flex items-start px-4">
         <div className="max-w-2xl">
           {content.map((item, index) => (
             <div key={item.title + index} className="my-20">
               <motion.h2
-                initial={{
-                  opacity: 0,
-                }}
-                animate={{
-                  opacity: activeCard === index ? 1 : 0.3,
-                }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: activeCard === index ? 1 : 0.3 }}
                 className="text-2xl font-bold text-slate-100"
               >
                 {item.title}
               </motion.h2>
               <motion.p
-                initial={{
-                  opacity: 0,
-                }}
-                animate={{
-                  opacity: activeCard === index ? 1 : 0.3,
-                }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: activeCard === index ? 1 : 0.3 }}
                 className="text-kg mt-10 max-w-sm text-slate-300"
               >
                 {item.description}
               </motion.p>
+
+              {/* 👇 نمایش تصویر زیر توضیحات در حالت موبایل */}
+              <div className="mt-6 block lg:hidden">{item.content ?? null}</div>
             </div>
           ))}
           <div className="h-40" />
         </div>
       </div>
+
+      {/* 👇 نمایش تصویر در سایز بزرگ در کنار متن */}
       <div
         className={cn(
           "sticky top-10 hidden h-[20rem] w-[33rem] overflow-hidden rounded-xl lg:block",
