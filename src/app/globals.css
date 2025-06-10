@@ -34,7 +34,13 @@
 
     --radius: 0.5rem;
   }
-
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    min-height: 100dvh;
+    user-select: none;
+  }
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;

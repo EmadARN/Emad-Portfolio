@@ -100,14 +100,14 @@ export default function ProjectDetailsContent({ project }: Props) {
       <p className="text-gray-700 mb-4">{project.description}</p>
 
       <div>
-        <h2 className="text-2xl font-bold text-purple-600 mb-4">
+        <h2 className="md:text-2xl font-bold text-nowrap text-purple-600 mb-4">
           📅 Time Line:
         </h2>
         <p className="text-sm pl-2 text-gray-500 mb-4">{project.time_line}</p>
       </div>
 
       <div className="w-1/2">
-        <h2 className="text-2xl font-bold text-purple-600 mb-4">
+        <h2 className="md:text-2xl font-bold text-nowrap text-purple-600 mb-4 ">
           📱 Web demo:
         </h2>
         <Link

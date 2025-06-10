@@ -107,9 +107,9 @@ export const BentoGridItem = ({
             />
           )}
         </div>
-        {id === 7 && (
+        {/* {id === 7 && (
           <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
-        )}
+        )} */}
         <div
           className={cn(
             titleClassName,
@@ -119,7 +119,12 @@ export const BentoGridItem = ({
           <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10 ">
             {description}
           </div>
-          <div className={`font-sans text-2xl whitespace-pre-line z-10`}>
+          <div
+            className={cn(
+              titleClassName,
+              "font-sans  whitespace-pre-line z-10"
+            )}
+          >
             {title}
           </div>
           {/* for the github 3d globe */}
@@ -130,9 +135,9 @@ export const BentoGridItem = ({
           {/* Tech stack list div */}
           {id === 5 && <MarqueeTrack />}
           {id === 7 && (
-            <div className=" relative">
+            <div className=" relative ">
               <div
-                className={`absolute -bottom-5 right-0 ${
+                className={`absolute -bottom-5 left-0  ${
                   copied ? "block" : "block"
                 }`}
               >
