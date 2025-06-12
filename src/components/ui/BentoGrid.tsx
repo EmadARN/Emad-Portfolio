@@ -4,7 +4,6 @@ import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import Lottie from "react-lottie";
 import { cn } from "@/lib/utils";
-import GridGlobe from "./GridGlobe";
 import animationData from "@/constants/confetti.json";
 import MagicButton from "../MagicButton";
 import MarqueeTrack from "./MarqueeTrack";
@@ -128,7 +127,7 @@ export const BentoGridItem = ({
             {title}
           </div>
           {/* for the github 3d globe */}
-          {id === 2 && <GridGlobe />}
+          {/* {id === 2 && <GridGlobe />} */}
 
           {id === 4 && <BackgroundLines />}
 
