@@ -3,19 +3,16 @@ import { projectData } from "@/constants";
 import ProjectDetailsContent from "@/components/ProjectDetailsContent";
 
 interface ProjectDetailsProps {
-  params: {
-    projectId: string;
-  };
+  params: Promise<{ projectId: string }>; // params به‌صورت Promise تعریف شده
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-export default function ProjectDetails({ params }: ProjectDetailsProps) {
-  const project = projectData.find((p) => p.id === params.projectId);
+export default async function ProjectDetails({ params }: ProjectDetailsProps) {
+  const { projectId } = await params;
+
+  const project = projectData.find((p) => p.id === projectId);
 
   if (!project) return notFound();
 
-  return (
-    <>
-      <ProjectDetailsContent project={project} />
-    </>
-  );
+  return <ProjectDetailsContent project={project} />;
 }
