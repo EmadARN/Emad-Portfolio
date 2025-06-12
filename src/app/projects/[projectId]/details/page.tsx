@@ -1,13 +1,14 @@
 import { notFound } from "next/navigation";
 import { projectData } from "@/constants";
 import ProjectDetailsContent from "@/components/ProjectDetailsContent";
+import type { NextPage } from "next";
 
-interface ProjectDetailsProps {
-  params: Promise<{ projectId: string }>; // params به‌صورت Promise تعریف شده
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
+type Props = {
+  params: Promise<{ projectId: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
 
-export default async function ProjectDetails({ params }: ProjectDetailsProps) {
+const ProjectDetails: NextPage<Props> = async ({ params }) => {
   const { projectId } = await params;
 
   const project = projectData.find((p) => p.id === projectId);
@@ -15,4 +16,6 @@ export default async function ProjectDetails({ params }: ProjectDetailsProps) {
   if (!project) return notFound();
 
   return <ProjectDetailsContent project={project} />;
-}
+};
+
+export default ProjectDetails;
