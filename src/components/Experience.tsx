@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 import { Button } from "./ui/MovingBorders";
 import { workExperience } from "@/constants";
-import Image from "next/image"; 
+import Image from "next/image";
 
 const Experience = () => {
   return (
