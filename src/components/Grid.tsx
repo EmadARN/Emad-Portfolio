@@ -1,4 +1,3 @@
-"use client";
 import { gridItems } from "../constants";
 import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
 
