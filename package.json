@@ -36,8 +36,9 @@
     "@types/react-lottie": "^1.2.10",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
-    "eslint-config-next": "14.1.4",
+    "eslint-config-next": "^15.3.3",
     "postcss": "^8",
+    "postcss-import": "^16.1.0",
     "tailwindcss": "^3.3.0",
     "typescript": "^5.8.3"
   }
