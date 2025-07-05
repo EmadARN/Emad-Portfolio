@@ -1,13 +1,16 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoCopyOutline } from "react-icons/io5";
-import Lottie from "react-lottie";
+import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
 import animationData from "@/constants/confetti.json";
 import MagicButton from "../MagicButton";
 import MarqueeTrack from "./MarqueeTrack";
 import Image from "next/image";
 import { BackgroundLines } from "./backgroundLines";
+
+// لود پویا برای Lottie مخصوص Client
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 
 export const BentoGrid = ({
   className,
@@ -48,6 +51,11 @@ export const BentoGridItem = ({
   spareImg?: string;
 }) => {
   const [copied, setCopied] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // فقط بعد از mount، یعنی فقط در کلاینت true میشه
+  }, []);
 
   const defaultOptions = {
     loop: copied,
@@ -89,6 +97,7 @@ export const BentoGridItem = ({
             />
           )}
         </div>
+
         <div
           className={`absolute right-0 -bottom-5 ${
             id === 6 && "w-full opacity-80"
@@ -105,9 +114,7 @@ export const BentoGridItem = ({
             />
           )}
         </div>
-        {/* {id === 7 && (
-          <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
-        )} */}
+
         <div
           className={cn(
             titleClassName,
@@ -117,30 +124,23 @@ export const BentoGridItem = ({
           <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10 ">
             {description}
           </div>
+
           <div
-            className={cn(
-              titleClassName,
-              "font-sans  whitespace-pre-line z-10"
-            )}
+            className={cn(titleClassName, "font-sans whitespace-pre-line z-10")}
           >
             {title}
           </div>
-          {/* for the github 3d globe */}
-          {/* {id === 2 && <GridGlobe />} */}
 
           {id === 4 && <BackgroundLines />}
-
-          {/* Tech stack list div */}
           {id === 5 && <MarqueeTrack />}
+
           {id === 7 && (
-            <div className=" relative ">
-              <div
-                className={`absolute -bottom-5 left-0  ${
-                  copied ? "block" : "block"
-                }`}
-              >
-                <Lottie options={defaultOptions} height={200} width={400} />
-              </div>
+            <div className="relative">
+              {copied && isClient && (
+                <div className="absolute -bottom-5 left-0">
+                  <Lottie options={defaultOptions} height={200} width={400} />
+                </div>
+              )}
 
               <MagicButton
                 title={copied ? "Email is Copied!" : "Copy my email address"}
