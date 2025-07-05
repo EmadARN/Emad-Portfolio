@@ -46,7 +46,6 @@ const simulateDataFetch = async () => {
 export default function ProjectDetailsContent({ project }: Props) {
   const [isLoading, setIsLoading] = useState(true);
   const moveBack = useMoveBack();
-  const landingVideoRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -67,21 +66,6 @@ export default function ProjectDetailsContent({ project }: Props) {
   const { adminPanel, userPanel, receptionPanel, landing, auth, more } =
     project.details;
 
-  const handleFullscreen = () => {
-    const video = landingVideoRef.current;
-    if (!video) return;
-
-    if (video.requestFullscreen) {
-      video.requestFullscreen();
-    } else if ((video as any).webkitEnterFullscreen) {
-      (video as any).webkitEnterFullscreen(); // برای iOS
-    } else if ((video as any).webkitRequestFullscreen) {
-      (video as any).webkitRequestFullscreen(); // برای مرورگرهای قدیمی
-    } else if ((video as any).msRequestFullscreen) {
-      (video as any).msRequestFullscreen(); // برای IE
-    }
-  };
-
   const landingSection =
     landing.images.length > 0
       ? {
@@ -91,11 +75,11 @@ export default function ProjectDetailsContent({ project }: Props) {
           content: (
             <div className="relative w-full max-w-5xl mx-auto">
               <video
-                ref={landingVideoRef}
                 src={landing.images[0]}
                 autoPlay
                 loop
                 muted
+                controls
                 playsInline
                 className="rounded-lg w-full h-full object-contain"
                 style={{
@@ -104,12 +88,6 @@ export default function ProjectDetailsContent({ project }: Props) {
                 }}
                 preload="none"
               />
-              <button
-                onClick={handleFullscreen}
-                className="absolute bottom-4 right-4 bg-white/80 hover:bg-white text-black px-3 py-2 rounded shadow flex items-center gap-2"
-              >
-                <FiMaximize />
-              </button>
             </div>
           ),
         }
@@ -204,7 +182,7 @@ export default function ProjectDetailsContent({ project }: Props) {
         </h4>
       </div>
 
-      <div className="scale-125 w-full h-full py-4 mt-16">
+      <div className="md:scale-125 w-full h-full py-4 mt-16">
         <StickyScroll content={dynamicContent} />
       </div>
     </div>
