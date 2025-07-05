@@ -192,7 +192,7 @@ export const projectData = [
   {
     id: "Goldstore",
     title: "Goldstore",
-    button: "Explore GoldstoreWeb",
+    button: "Explore Web",
     cover_image: "/projectImages/goldWeb/cover.png",
 
     description:
@@ -257,7 +257,7 @@ export const projectData = [
   {
     id: "Metallugical_Research_Center",
     title: "MetallugicalWeb",
-    button: "Explore MetallugicalWeb",
+    button: "Explore Web",
     cover_image: "/projectImages/metalluargy/cover.png",
     description:
       "An experimental take on modern cityscapes. We focused on interactive UI animations and real-time data updates.",
@@ -313,7 +313,7 @@ export const projectData = [
   {
     id: "Laser-Hair-Removal-Clinic",
     title: "Laser-Hair-Removal-Clinic",
-    button: "Explore Laser-Hair-Removal-Clinic",
+    button: "Explore Web",
     cover_image: "/projectImages/clinic/cover.png",
     description:
       "Inspired by cyberpunk aesthetics, this project features WebGL backgrounds and futuristic UI themes.",
@@ -365,7 +365,7 @@ export const projectData = [
   {
     id: "AdliKaraWeb",
     title: "AdliKaraWeb",
-    button: "Explore AdliKaraWeb",
+    button: "Explore Web",
     cover_image: "/projectImages/adllikara/cover.png",
     description:
       "A minimalistic storytelling experience in the heart of a digital desert. Built with Next.js and Chakra UI.",
@@ -416,7 +416,7 @@ export const projectData = [
   {
     id: "EcommerceWeb",
     title: "EcommerceWeb",
-    button: "Explore EcommerceWeb",
+    button: "Explore Web",
     cover_image: "/b1.png",
     description:
       "A minimalistic storytelling experience in the heart of a digital desert. Built with Next.js and Chakra UI.",
