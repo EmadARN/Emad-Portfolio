@@ -1,12 +1,11 @@
 import { notFound } from "next/navigation";
 import ProjectDetailsContent from "@/components/ProjectDetailsContent";
-import type { NextPage } from "next";
 
 type Props = {
   params: { projectId: string };
 };
 
-const ProjectDetails: NextPage<Props> = async ({ params }) => {
+const ProjectDetails = async ({ params }: Props) => {
   const { projectId } = params;
 
   // لود کردن JSON از public
