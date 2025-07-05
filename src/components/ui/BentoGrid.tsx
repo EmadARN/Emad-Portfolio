@@ -108,6 +108,7 @@ export const BentoGridItem = ({
               width={400}
               height={400}
               style={{ objectFit: "cover" }}
+              priority
             />
           )}
         </div>
@@ -125,6 +126,7 @@ export const BentoGridItem = ({
               height={200}
               style={{ objectFit: "cover" }}
               className="object-cover object-center"
+              priority
             />
           )}
         </div>

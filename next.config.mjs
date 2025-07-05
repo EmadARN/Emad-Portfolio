@@ -2,11 +2,14 @@
 const nextConfig = {
   images: {
     domains: [
-      "your-domain.com",
+      "emad-portfolio-five.vercel.app",
       "images.unsplash.com",
       "fonts.gstatic.com",
       "logo.clearbit.com",
     ], // هاست‌های مجاز برای تصاویر
   },
-  typescript: { ignoreBuildErrors: true }, // برای جلوگیری از خطاهای تایپ‌اسکریپت در زمان ساخت
+  typescript: {
+    ignoreBuildErrors: process.env.NODE_ENV === "development",
+  },
+  // برای جلوگیری از خطاهای تایپ‌اسکریپت در زمان ساخت
 };
