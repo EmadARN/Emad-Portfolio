@@ -67,18 +67,18 @@ export default function ProjectDetailsContent({ project }: Props) {
   const { adminPanel, userPanel, receptionPanel, landing, auth, more } =
     project.details;
 
-
-
   const handleFullscreen = () => {
     const video = landingVideoRef.current;
     if (!video) return;
 
     if (video.requestFullscreen) {
       video.requestFullscreen();
+    } else if ((video as any).webkitEnterFullscreen) {
+      (video as any).webkitEnterFullscreen(); // برای iOS
     } else if ((video as any).webkitRequestFullscreen) {
-      (video as any).webkitRequestFullscreen();
+      (video as any).webkitRequestFullscreen(); // برای مرورگرهای قدیمی
     } else if ((video as any).msRequestFullscreen) {
-      (video as any).msRequestFullscreen();
+      (video as any).msRequestFullscreen(); // برای IE
     }
   };
 
@@ -102,6 +102,7 @@ export default function ProjectDetailsContent({ project }: Props) {
                   aspectRatio: "16/9",
                   filter: "grayscale(10%) contrast(1.2) saturate(1.4)",
                 }}
+                preload="none"
               />
               <button
                 onClick={handleFullscreen}
