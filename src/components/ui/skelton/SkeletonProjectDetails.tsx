@@ -72,9 +72,7 @@ export const SkeletonStickyScroll = ({ className }: { className?: string }) => {
         <div className="max-w-2xl">
           {skeletonContent.map((_, index) => (
             <div key={index} className="py-20">
-              <div className="h-6 bg-gray-500 rounded w-1/2" />
-              <div className="h-4 bg-gray-500 rounded w-3/4 mt-10" />
-              <div className="mt-6 block lg:hidden">
+              <div className="mt-10 block lg:hidden">
                 <SkeletonAnimatedTestimonials />
               </div>
             </div>

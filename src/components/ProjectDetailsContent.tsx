@@ -7,6 +7,7 @@ import SkeletonProjectDetails from "./ui/skelton/SkeletonProjectDetails";
 import useMoveBack from "@/hooks/userMoveBack";
 import { AnimatedTestimonials } from "./ui/animatedTestimonials";
 import { StickyScroll } from "./ui/StickyScrolReveal";
+import Footer from "./Footer";
 
 interface Section {
   title: string;
@@ -124,7 +125,7 @@ export default function ProjectDetailsContent({ project }: Props) {
     <div className="max-w-4xl mx-auto p-6">
       <button
         onClick={moveBack}
-        className="text-white bg-violet-950 p-2 rounded-md mb-4"
+        className="text-white bg-violet-950 hover:bg-violet-900 p-2 rounded-md mb-4"
       >
         ← Back
       </button>
@@ -161,13 +162,13 @@ export default function ProjectDetailsContent({ project }: Props) {
             {project.technologies.map((tech, i) => (
               <div
                 key={i}
-                className="w-20 h-20 bg-white rounded-full p-2 shadow-md hover:scale-105 transition-transform relative"
+                className="w-16 md:w-20 h-16 md:h-20  bg-white rounded-xl p-2 shadow-md hover:scale-105 transition-transform relative"
               >
                 <Image
                   src={tech}
                   alt={`tech-${i}`}
                   fill
-                  className="object-contain rounded-full"
+                  className="object-contain rounded-md"
                   sizes="80px"
                 />
               </div>
@@ -182,9 +183,10 @@ export default function ProjectDetailsContent({ project }: Props) {
         </h4>
       </div>
 
-      <div className="md:scale-125 w-full h-full py-4 mt-16">
+      <div className="md:scale-125 w-full h-full py-4 my-16 ">
         <StickyScroll content={dynamicContent} />
       </div>
+      <Footer />
     </div>
   );
 }

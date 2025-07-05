@@ -102,7 +102,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
           <h2 className="text-lg md:text-2xl  font-semibold">{title}</h2>
           <div className="flex justify-center">
             <Link href={`/projects/${id}/details/`}>
-              <button className="mt-6 px-4 py-2 text-xs bg-white text-black rounded-2xl h-6  md:h-12 hover:shadow-lg transition">
+              <button className="flex items-center mt-6 px-4 py-2 text-xs bg-white text-black rounded-2xl h-6  md:h-12 hover:shadow-lg transition">
                 {button}
               </button>
             </Link>
