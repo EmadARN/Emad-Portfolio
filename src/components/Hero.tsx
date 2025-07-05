@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <>
       {/* 🔝 Contact Icon top right corner */}
-      <div className="absolute top-16 right-6 z-50">
+      <div className="hidden md:flex absolute top-16 right-6 z-50">
         <ContactUsIcon />
       </div>
 

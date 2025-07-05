@@ -22,7 +22,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
   const xRef = useRef(0);
   const yRef = useRef(0);
   const frameRef = useRef<number | null>(null);
-  
+
   useEffect(() => {
     const animate = () => {
       if (!slideRef.current) return;
@@ -60,7 +60,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
     <div className="[perspective:1200px] [transform-style:preserve-3d]">
       <li
         ref={slideRef}
-        className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[70vmin] h-[70vmin] mx-[4vmin] z-10"
+        className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[70vmin] h-[70vmin] mx-[4vmin] z-10 "
         onClick={() => handleSlideClick(index)}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -74,7 +74,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
         }}
       >
         <div
-          className="absolute top-0 left-0 w-full h-full bg-[#1D1F2F] rounded-[1%] overflow-hidden transition-all duration-150 ease-out"
+          className="absolute top-0 left-0 w-full h-full bg-transparent rounded-[1%] overflow-hidden transition-all duration-150 ease-out"
           style={{
             transform:
               current === index
@@ -83,7 +83,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
           }}
         >
           <Image
-            className="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-600 ease-in-out"
+            className="absolute inset-0 w-full  h-full object-contain opacity-100 transition-opacity duration-600 ease-in-out"
             src={cover_image}
             alt={title}
             fill
@@ -91,7 +91,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
             priority
           />
           {current === index && (
-            <div className="absolute inset-0 bg-black/30 transition-all duration-1000" />
+            <div className="absolute inset-0 bg-black/10 transition-all duration-1000" />
           )}
         </div>
         <article
@@ -99,9 +99,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
             current === index ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
         >
-          <h2 className="text-lg md:text-2xl lg:text-4xl font-semibold">
-            {title}
-          </h2>
+          <h2 className="text-lg md:text-2xl  font-semibold">{title}</h2>
           <div className="flex justify-center">
             <Link href={`/projects/${id}/details/`}>
               <button className="mt-6 px-4 py-2 text-xs bg-white text-black rounded-2xl h-12 hover:shadow-lg transition">

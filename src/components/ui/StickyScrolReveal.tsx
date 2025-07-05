@@ -92,7 +92,7 @@ export const StickyScroll = ({
       {/* 👇 نمایش تصویر در سایز بزرگ در کنار متن */}
       <div
         className={cn(
-          "sticky top-10 hidden h-[20rem] w-[33rem] overflow-hidden rounded-xl lg:block",
+          "sticky top-10 hidden h-[20rem] w-[36rem] overflow-hidden rounded-xl lg:block",
           contentClassName
         )}
       >

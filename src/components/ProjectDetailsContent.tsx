@@ -4,6 +4,8 @@ import { StickyScroll } from "./ui/StickyScrolReveal";
 import { AnimatedTestimonials } from "./ui/animatedTestimonials";
 import useMoveBack from "@/hooks/userMoveBack";
 import Image from "next/image";
+import { useRef } from "react";
+import { FiMaximize } from "react-icons/fi";
 
 interface Section {
   title: string;
@@ -16,7 +18,7 @@ interface Project {
   description: string;
   time_line: string;
   live_link: string;
-  technologies?: string[]; // ← تکنولوژی‌ها به صورت آدرس عکس
+  technologies?: string[];
   details: {
     landing: Section;
     auth: Section;
@@ -36,6 +38,20 @@ export default function ProjectDetailsContent({ project }: Props) {
     project.details;
 
   const moveBack = useMoveBack();
+  const landingVideoRef = useRef<HTMLVideoElement>(null);
+
+  const handleFullscreen = () => {
+    const video = landingVideoRef.current;
+    if (!video) return;
+
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if ((video as any).webkitRequestFullscreen) {
+      (video as any).webkitRequestFullscreen();
+    } else if ((video as any).msRequestFullscreen) {
+      (video as any).msRequestFullscreen();
+    }
+  };
 
   const landingSection =
     landing.images.length > 0
@@ -44,18 +60,27 @@ export default function ProjectDetailsContent({ project }: Props) {
           title: landing.title,
           description: landing.desc,
           content: (
-            <video
-              src={landing.images[0]}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="rounded-lg shadow-md w-full md:h-[15rem] object-cover"
-              style={{
-                aspectRatio: "16/9",
-                filter: "grayscale(10%) contrast(1.2) saturate(1.4)",
-              }}
-            />
+            <div className="relative w-full max-w-5xl mx-auto">
+              <video
+                ref={landingVideoRef}
+                src={landing.images[0]}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="rounded-lg w-full h-full object-contain"
+                style={{
+                  aspectRatio: "16/9",
+                  filter: "grayscale(10%) contrast(1.2) saturate(1.4)",
+                }}
+              />
+              <button
+                onClick={handleFullscreen}
+                className="absolute bottom-4 right-4 bg-white/80 hover:bg-white text-black px-3 py-2 rounded shadow flex items-center gap-2"
+              >
+                <FiMaximize />
+              </button>
+            </div>
           ),
         }
       : null;
@@ -97,7 +122,7 @@ export default function ProjectDetailsContent({ project }: Props) {
       </button>
 
       <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
-      <p className="text-gray-700 mb-4">{project.description}</p>
+      <p className="text-gray-300 mb-4">{project.description}</p>
 
       <div>
         <h2 className="md:text-2xl font-bold text-nowrap text-purple-600 mb-4">
@@ -119,7 +144,7 @@ export default function ProjectDetailsContent({ project }: Props) {
         </Link>
       </div>
 
-      {/*  تکنولوژی‌های استفاده‌شده */}
+      {/* تکنولوژی‌ها */}
       {project.technologies && project.technologies.length > 0 && (
         <div className="py-6">
           <h2 className="text-2xl font-bold text-purple-600 mb-4">
@@ -150,7 +175,7 @@ export default function ProjectDetailsContent({ project }: Props) {
         </h4>
       </div>
 
-      <div className="w-full py-4">
+      <div className="scale-125 w-full h-full py-4 mt-16">
         <StickyScroll content={dynamicContent} />
       </div>
     </div>
