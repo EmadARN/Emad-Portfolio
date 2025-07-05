@@ -29,7 +29,10 @@ const SkeletonProjectDetails = ({ className }: { className?: string }) => {
           {Array(4)
             .fill(0)
             .map((_, i) => (
-              <div key={i} className="w-20 h-20 bg-gray-500 rounded-full" />
+              <div
+                key={i}
+                className="w-16 md:w-20 h-16 md:h-20 bg-gray-500 rounded-md"
+              />
             ))}
         </div>
       </div>
