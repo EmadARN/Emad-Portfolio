@@ -2,18 +2,13 @@ import { notFound } from "next/navigation";
 import ProjectDetailsContent from "@/components/ProjectDetailsContent";
 
 type Props = {
-  params: { projectId: string };
+  params: Promise<{ projectId: string }>;
 };
 
 const ProjectDetails = async ({ params }: Props) => {
-  const { projectId } = params;
+  const { projectId } = await params; // منتظر باز شدن Promise
 
   // لود کردن JSON از public
-  // const res = await fetch(
-  //   `${
-  //     process.env.NEXT_PUBLIC_BASE_URL || ""
-  //   }http://localhost:3000/data/projectData.json`
-  // );
   const res = await fetch(
     `https://emad-portfolio-five.vercel.app/data/projectData.json`,
     {
