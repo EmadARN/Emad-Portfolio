@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
-import { StickyScroll } from "./ui/StickyScrolReveal";
-import { AnimatedTestimonials } from "./ui/animatedTestimonials";
-import useMoveBack from "@/hooks/userMoveBack";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { FiMaximize } from "react-icons/fi";
+import SkeletonProjectDetails from "./ui/skelton/SkeletonProjectDetails";
+import useMoveBack from "@/hooks/userMoveBack";
+import { AnimatedTestimonials } from "./ui/animatedTestimonials";
+import { StickyScroll } from "./ui/StickyScrolReveal";
 
 interface Section {
   title: string;
@@ -33,12 +34,40 @@ interface Props {
   project: Project;
 }
 
+// تابع شبیه‌سازی لود دیتا
+const simulateDataFetch = async () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(true); // شبیه‌سازی موفقیت
+    }, 2000); // تأخیر ۲ ثانیه
+  });
+};
+
 export default function ProjectDetailsContent({ project }: Props) {
+  const [isLoading, setIsLoading] = useState(true);
+  const moveBack = useMoveBack();
+  const landingVideoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        await simulateDataFetch();
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error loading data:", error);
+        setIsLoading(false);
+      }
+    };
+    loadData();
+  }, []);
+
+  if (isLoading) {
+    return <SkeletonProjectDetails />;
+  }
+
   const { adminPanel, userPanel, receptionPanel, landing, auth, more } =
     project.details;
 
-  const moveBack = useMoveBack();
-  const landingVideoRef = useRef<HTMLVideoElement>(null);
+
 
   const handleFullscreen = () => {
     const video = landingVideoRef.current;
@@ -118,7 +147,7 @@ export default function ProjectDetailsContent({ project }: Props) {
         onClick={moveBack}
         className="text-white bg-violet-950 p-2 rounded-md mb-4"
       >
-        &larr; Back
+        ← Back
       </button>
 
       <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
@@ -144,7 +173,6 @@ export default function ProjectDetailsContent({ project }: Props) {
         </Link>
       </div>
 
-      {/* تکنولوژی‌ها */}
       {project.technologies && project.technologies.length > 0 && (
         <div className="py-6">
           <h2 className="text-2xl font-bold text-purple-600 mb-4">

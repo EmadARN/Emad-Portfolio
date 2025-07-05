@@ -1,7 +1,8 @@
 "use client";
-import { useId, useState } from "react";
+import { useId, useState, useEffect } from "react";
 import Slide from "./ui/carousel/Slide";
 import { CarouselControl } from "./ui/carousel/CarouselControl";
+import SkeletonSlide from "./ui/skelton/SkeletonSlide";
 
 interface SlideData {
   id: string;
@@ -17,9 +18,32 @@ interface CarouselProps {
   slides: SlideData[];
 }
 
+// تابع شبیه‌سازی لود دیتا
+const simulateDataFetch = async () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(true); // شبیه‌سازی موفقیت
+    }, 2000); // تأخیر ۲ ثانیه
+  });
+};
+
 export const RecentProjects = ({ slides }: CarouselProps) => {
   const [current, setCurrent] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
   const id = useId();
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        await simulateDataFetch();
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error loading data:", error);
+        setIsLoading(false);
+      }
+    };
+    loadData();
+  }, []);
 
   const handlePreviousClick = () =>
     setCurrent((current - 1 + slides.length) % slides.length);
@@ -43,28 +67,36 @@ export const RecentProjects = ({ slides }: CarouselProps) => {
             transform: `translateX(-${current * (100 / slides.length)}%)`,
           }}
         >
-          {slides.map((slide, index) => (
-            <Slide
-              key={index}
-              slide={slide}
-              index={index}
-              current={current}
-              handleSlideClick={handleSlideClick}
-            />
-          ))}
+          {isLoading
+            ? // رندر اسکلتون‌ها به تعداد اسلایدها
+              Array(slides.length)
+                .fill(0)
+                .map((_, index) => <SkeletonSlide key={index} />)
+            : // رندر اسلایدهای اصلی
+              slides.map((slide, index) => (
+                <Slide
+                  key={index}
+                  slide={slide}
+                  index={index}
+                  current={current}
+                  handleSlideClick={handleSlideClick}
+                />
+              ))}
         </ul>
-        <div className="absolute flex justify-center w-full top-[calc(100%+1rem)]">
-          <CarouselControl
-            type="previous"
-            title="Go to previous slide"
-            handleClick={handlePreviousClick}
-          />
-          <CarouselControl
-            type="next"
-            title="Go to next slide"
-            handleClick={handleNextClick}
-          />
-        </div>
+        {!isLoading && (
+          <div className="absolute flex justify-center w-full top-[calc(100%+1rem)]">
+            <CarouselControl
+              type="previous"
+              title="Go to previous slide"
+              handleClick={handlePreviousClick}
+            />
+            <CarouselControl
+              type="next"
+              title="Go to next slide"
+              handleClick={handleNextClick}
+            />
+          </div>
+        )}
       </div>
     </section>
   );

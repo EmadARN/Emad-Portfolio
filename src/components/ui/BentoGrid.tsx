@@ -8,6 +8,7 @@ import MagicButton from "../MagicButton";
 import MarqueeTrack from "./MarqueeTrack";
 import Image from "next/image";
 import { BackgroundLines } from "./backgroundLines";
+import Skeleton from "./skelton/Skeleton";
 
 // لود پویا برای Lottie مخصوص Client
 const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
@@ -40,6 +41,7 @@ export const BentoGridItem = ({
   imgClassName,
   titleClassName,
   spareImg,
+  isLoading = false,
 }: {
   className?: string;
   id: number;
@@ -49,6 +51,7 @@ export const BentoGridItem = ({
   imgClassName?: string;
   titleClassName?: string;
   spareImg?: string;
+  isLoading?: boolean;
 }) => {
   const [copied, setCopied] = useState(false);
   const [isClient, setIsClient] = useState(false);
@@ -71,6 +74,17 @@ export const BentoGridItem = ({
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
+
+  if (isLoading) {
+    return (
+      <Skeleton
+        className={className}
+        imgClassName={imgClassName}
+        titleClassName={titleClassName}
+        id={id}
+      />
+    );
+  }
 
   return (
     <div
@@ -121,7 +135,7 @@ export const BentoGridItem = ({
             "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10 w-full"
           )}
         >
-          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10 ">
+          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
             {description}
           </div>
 
