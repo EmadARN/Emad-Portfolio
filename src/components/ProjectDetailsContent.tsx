@@ -1,13 +1,14 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useRef, useState, useEffect } from "react";
-import { FiMaximize } from "react-icons/fi";
+import { useState, useEffect } from "react";
 import SkeletonProjectDetails from "./ui/skelton/SkeletonProjectDetails";
 import useMoveBack from "@/hooks/userMoveBack";
 import { AnimatedTestimonials } from "./ui/animatedTestimonials";
 import { StickyScroll } from "./ui/StickyScrolReveal";
 import Footer from "./Footer";
+import { socialMedia } from "@/constants";
+import { FaGithubSquare } from "react-icons/fa";
 
 interface Section {
   title: string;
@@ -39,8 +40,8 @@ interface Props {
 const simulateDataFetch = async () => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(true); // شبیه‌سازی موفقیت
-    }, 2000); // تأخیر ۲ ثانیه
+      resolve(true);
+    }, 2000);
   });
 };
 
@@ -135,14 +136,26 @@ export default function ProjectDetailsContent({ project }: Props) {
 
       <div>
         <h2 className="md:text-2xl font-bold text-nowrap text-purple-600 mb-4">
-          📅 Time Line:
+          📅 Time Line
         </h2>
         <p className="text-sm pl-2 text-gray-500 mb-4">{project.time_line}</p>
       </div>
-
+      <div className="w-1/2 pl-1">
+        <h2 className="md:text-2xl font-bold text-nowrap text-purple-600 mb-4 ">
+          <p className="flex items-center gap-3">
+            <FaGithubSquare /> github
+          </p>
+        </h2>
+        <Link
+          className="text-blue-500 pl-1 mb-6 block"
+          href={socialMedia[0].link}
+        >
+          {socialMedia[0].name}
+        </Link>
+      </div>
       <div className="w-1/2">
         <h2 className="md:text-2xl font-bold text-nowrap text-purple-600 mb-4 ">
-          📱 Web demo:
+          📱 Web demo
         </h2>
         <Link
           href={project.live_link}
