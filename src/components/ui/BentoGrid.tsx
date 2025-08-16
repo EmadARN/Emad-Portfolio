@@ -51,7 +51,10 @@ export const BentoGridItem = ({
   description?: string | React.ReactNode;
   img?: string;
   video?: string;
-  style?: Pick<CSSProperties, "objectFit" | "borderRadius">;
+  style?: {
+    objectFit?: CSSProperties["objectFit"];
+    borderRadius?: CSSProperties["borderRadius"];
+  };
   imgClassName?: string;
   titleClassName?: string;
   spareImg?: string;

@@ -38,7 +38,7 @@ const Grid = () => {
             description={item.description}
             className={item.className}
             img={item.img}
-            style={item.style}
+            style={item.style as React.CSSProperties}
             video={item.video}
             imgClassName={item.imgClassName}
             titleClassName={item.titleClassName}
