@@ -7,33 +7,52 @@ export const navItems = [
 
 export const gridItems = [
   {
-    id: 1,
+    id: 0,
     title: "I prioritize client collaboration, fostering open communication ",
     description: "",
-    className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] ",
+    className: "lg:col-span-2 md:col-span-6 md:row-span-4 lg:min-h-[60vh] ",
     imgClassName: "w-full h-full ",
     titleClassName: "justify-end max-w-96 font-bold md:text-2xl",
+    style: { objectFit: "cover" },
     img: "/b1.png",
+    video: "",
     spareImg: "",
   },
+  {
+    id: 1,
+    title: "",
+    description: "",
+    className: "lg:col-span-1 md:col-span-2 md:row-span-2",
+    imgClassName: "w-full h-full object-contain",
+    titleClassName: "",
+    style: { objectFit: "contain", borderRadius: "50%" },
+    img: "/Emad.jpg",
+    video: "",
+    spareImg: "",
+  },
+
   {
     id: 2,
     title: "I'm very flexible with time zone communications",
     description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
+    className: "lg:col-span-2 md:col-span-4 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-start font-bold md:text-2xl",
     img: "",
+    style: { objectFit: "cover" },
+    video: "/videos/glob.mp4",
     spareImg: "",
   },
   {
     id: 3,
     title: "Tech enthusiast with a passion for development.",
     description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
+    className: "lg:col-span-3 md:col-span-6 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-start max-w-96 font-bold md:text-2xl",
     img: "/grid.svg",
+    style: { objectFit: "cover" },
+    video: "",
     spareImg: "/b4.svg",
   },
   {
@@ -46,6 +65,8 @@ export const gridItems = [
     imgClassName: "",
     titleClassName: " font-normal md:text-2xl",
     img: "",
+    style: { objectFit: "cover" },
+    video: "",
     spareImg: "",
   },
 
@@ -57,6 +78,8 @@ export const gridItems = [
     imgClassName: "",
     titleClassName: "justify-start md:text-2xl  font-bold ",
     img: "",
+    style: { objectFit: "cover" },
+    video: "",
     spareImg: "",
   },
 
@@ -69,6 +92,8 @@ export const gridItems = [
     titleClassName:
       "justify-center md:text-2xl md:justify-start lg:justify-center max-w-96 font-bold ",
     img: "/b5.svg",
+    style: { objectFit: "cover" },
+    video: "",
     spareImg: "/grid.svg",
   },
 
@@ -81,6 +106,8 @@ export const gridItems = [
     titleClassName:
       " justify-start md:max-w-full md:text-2xl  max-w-60   hidden md:flex  font-bold ",
     img: "/emad.png",
+    style: { objectFit: "cover" },
+    video: "",
     spareImg: "",
   },
 ];
@@ -187,8 +214,6 @@ export const workExperience = [
   //   thumbnail: "/exp3.svg",
   // },
 ];
-
-
 
 export const socialMedia = [
   {

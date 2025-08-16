@@ -38,6 +38,8 @@ export const BentoGridItem = ({
   title,
   description,
   img,
+  video,
+  style,
   imgClassName,
   titleClassName,
   spareImg,
@@ -48,6 +50,8 @@ export const BentoGridItem = ({
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
   img?: string;
+  video?: string;
+  style?: React.CSSProperties;
   imgClassName?: string;
   titleClassName?: string;
   spareImg?: string;
@@ -55,6 +59,14 @@ export const BentoGridItem = ({
 }) => {
   const [copied, setCopied] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkSize = () => setIsMobile(window.innerWidth < 640);
+    checkSize();
+    window.addEventListener("resize", checkSize);
+    return () => window.removeEventListener("resize", checkSize);
+  }, []);
 
   useEffect(() => {
     setIsClient(true); // فقط بعد از mount، یعنی فقط در کلاینت true میشه
@@ -104,15 +116,28 @@ export const BentoGridItem = ({
             <Image
               src={img}
               alt={img}
-              className={cn(imgClassName, "object-cover object-center")}
+              className={cn(imgClassName, "object-cover object-center ")}
               width={400}
               height={400}
-              style={{ objectFit: "cover" }}
+              style={isMobile ? style : {}}
               priority
             />
           )}
         </div>
-
+        <div className="w-full h-full absolute">
+          {video && (
+            <video
+              src={video}
+              width={400}
+              height={400}
+              className="w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          )}
+        </div>
         <div
           className={`absolute right-0 -bottom-5 ${
             id === 6 && "w-full opacity-80"
