@@ -9,10 +9,6 @@
 
   <h3 align="center"> Emad Portfolio</h3>
 
-  <p align="center">
-    🔗 <a href="https://emad-portfolio-five.vercel.app/" target="_blank">Live Demo</a>
-  </p>
-
 </div>
 
 ## 📋 <a name="table">Table of Contents</a>
@@ -31,7 +27,6 @@ Built with Next.js for handling the user interface, Three.js for rendering 3D el
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
 - Next.js
-- Three.js
 - Framer Motion
 - Tailwind CSS
 
@@ -810,5 +805,4 @@ export default config;
 </details>
 
 ## <a name="links">🔗 Assets</a>
-
-Assets used in the project can be found [here](https://Emdaportfolio.com)
+Assets used in the project can be found [here]([https://Emdaportfolio.com](https://emad-portfolio-five.vercel.app/))
