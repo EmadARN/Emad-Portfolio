@@ -26,7 +26,7 @@ export const gridItems = [
     imgClassName: "w-full h-full object-contain",
     titleClassName: "",
     style: { objectFit: "contain", borderRadius: "50%" },
-    img: "/Emad.jpg",
+    img: "/emad(1).png",
     video: "",
     spareImg: "",
   },

@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import SkeletonProjectDetails from "./ui/skelton/SkeletonProjectDetails";
-import useMoveBack from "@/hooks/userMoveBack";
 import { AnimatedTestimonials } from "./ui/animatedTestimonials";
 import { StickyScroll } from "./ui/StickyScrolReveal";
 import Footer from "./Footer";
@@ -47,7 +46,6 @@ const simulateDataFetch = async () => {
 
 export default function ProjectDetailsContent({ project }: Props) {
   const [isLoading, setIsLoading] = useState(true);
-  const moveBack = useMoveBack();
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -124,13 +122,6 @@ export default function ProjectDetailsContent({ project }: Props) {
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <button
-        onClick={moveBack}
-        className="text-white bg-violet-950 hover:bg-violet-900 p-2 rounded-md mb-4"
-      >
-        ← Back
-      </button>
-
       <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
       <p className="text-gray-300 mb-4">{project.description}</p>
 

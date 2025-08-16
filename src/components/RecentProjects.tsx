@@ -82,9 +82,9 @@ export const RecentProjects = ({ slides }: CarouselProps) => {
             pagination={{ clickable: true }}
             autoplay={{ delay: 4000, disableOnInteraction: false }}
             breakpoints={{
-              640: { slidesPerView: 1, spaceBetween: 20 }, // موبایل (یک اسلاید کامل)
-              768: { slidesPerView: 2, spaceBetween: 30 }, // تبلت
-              1024: { slidesPerView: 2.5, spaceBetween: 40 }, // دسکتاپ
+              640: { slidesPerView: 1, spaceBetween: 20 }, 
+              768: { slidesPerView: 2, spaceBetween: 30 }, 
+              1024: { slidesPerView: 2.5, spaceBetween: 40 }, 
             }}
           >
             {slides.map((slide) => (
