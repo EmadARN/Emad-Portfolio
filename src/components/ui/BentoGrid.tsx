@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, CSSProperties } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
@@ -51,7 +51,7 @@ export const BentoGridItem = ({
   description?: string | React.ReactNode;
   img?: string;
   video?: string;
-  style?: React.CSSProperties;
+  style?: Pick<CSSProperties, "objectFit" | "borderRadius">;
   imgClassName?: string;
   titleClassName?: string;
   spareImg?: string;
