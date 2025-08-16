@@ -805,4 +805,4 @@ export default config;
 </details>
 
 ## <a name="links">🔗 Assets</a>
-Assets used in the project can be found [here]([https://Emdaportfolio.com](https://emad-portfolio-five.vercel.app/))
+Assets used in the project can be found [here](<a href="https://emad-portfolio-five.vercel.app/" target="_blank">Live Demo</a>)
