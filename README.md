@@ -1,9 +1,6 @@
 <div align="center">
   <img src="./public/readMe.png" alt="nextdotjs" />
 
-
-
-    
 <div>
     <img src="https://img.shields.io/badge/-Next_JS-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=000000" alt="nextdotjs" />
     <img src="https://img.shields.io/badge/-Framer-black?style=for-the-badge&logoColor=white&logo=framer&color=0055FF" alt="framer" />
@@ -12,6 +9,10 @@
   </div>
 
   <h3 align="center"> Emad Portfolio</h3>
+
+  <p align="center">
+    🔗 <a href="https://emad-portfolio-five.vercel.app/" target="_blank">Live Demo</a>
+  </p>
 
 </div>
 
