@@ -6,14 +6,13 @@
     "cover_image": "/projectImages/goldWeb/cover.png",
     "description": "A seamless platform for buying and selling molten gold with a clean and professional user interface.Includes a dedicated customer panel for managing orders and tracking transaction status.An admin dashboard with full control over users, orders, and detailed reporting.",
     "time_line": "January 2024 - March 2024",
+    "github_link": "https://github.com/RezaFarzipour/Goldstore-Final-Version",
     "live_link": "https://mystic-mountains.vercel.app",
     "details": {
       "landing": {
         "title": "landing-page",
         "desc": "The Landing Page serves as the first point of interaction with a clean and engaging design.Smooth animations enhance user experience and help illustrate key processes intuitively.An FAQ section clarifies common questions, while a smart calculator allows real-time conversion between gold and Rial prices.",
-        "images": [
-          "/videos/gold/Lgold.webm"
-        ]
+        "images": ["/videos/gold/Lgold.webm"]
       },
       "auth": {
         "title": "Authentication-page",
@@ -70,15 +69,14 @@
     "cover_image": "/projectImages/metalluargy/cover.png",
     "description": "An experimental take on modern cityscapes. We focused on interactive UI animations and real-time data updates.",
     "time_line": "March 2024 - April 2024",
+    "github_link": "https://github.com/RezaFarzipour/Goldstore-Final-Version",
     "live_link": "https://urban-dreams.vercel.app",
     "details": {
       "landing": {
         "title": "landing-page",
         "desc": "A seamless platform for buying and selling molten gold with a clean and professional user interface.Includes a dedicated customer panel for managing orders and tracking transaction status.An admin dashboard with full control over users, orders, and detailed reporting.",
         "time_line": "January 2024 - March 2024",
-        "images": [
-          "/videos/metalluargy/Lmetalluargy.webm"
-        ]
+        "images": ["/videos/metalluargy/Lmetalluargy.webm"]
       },
       "auth": {
         "title": "",
@@ -126,14 +124,13 @@
     "cover_image": "/projectImages/clinic/cover.png",
     "description": "Inspired by cyberpunk aesthetics, this project features WebGL backgrounds and futuristic UI themes.",
     "time_line": "April 2024 - May 2024",
+    "github_link": "https://github.com/RezaFarzipour/Goldstore-Final-Version",
     "live_link": "https://neon-nights.vercel.app",
     "details": {
       "landing": {
         "title": "landing-page",
         "desc": "A seamless platform for buying and selling molten gold with a clean and professional user interface.Includes a dedicated customer panel for managing orders and tracking transaction status.An admin dashboard with full control over users, orders, and detailed reporting.",
-        "images": [
-          "/videos/clinic/Lclinic.webm"
-        ]
+        "images": ["/videos/clinic/Lclinic.webm"]
       },
       "auth": {
         "title": "",
@@ -178,14 +175,13 @@
     "cover_image": "/projectImages/adllikara/cover.png",
     "description": "A minimalistic storytelling experience in the heart of a digital desert. Built with Next.js and Chakra UI.",
     "time_line": "May 2024 - Present",
+    "github_link": "https://github.com/RezaFarzipour/Goldstore-Final-Version",
     "live_link": "https://desert-whispers.vercel.app",
     "details": {
       "landing": {
         "title": "",
         "desc": "",
-        "images": [
-          "/videos/adllikara/Ladllikara.webm"
-        ]
+        "images": ["/videos/adllikara/Ladllikara.webm"]
       },
       "auth": {
         "title": "",
@@ -229,14 +225,13 @@
     "cover_image": "/b1.png",
     "description": "A minimalistic storytelling experience in the heart of a digital desert. Built with Next.js and Chakra UI.",
     "time_line": "May 2024 - Present",
+    "github_link": "https://github.com/RezaFarzipour/Goldstore-Final-Version",
     "live_link": "https://desert-whispers.vercel.app",
     "details": {
       "landing": {
         "title": "",
         "desc": "",
-        "images": [
-          "/videos/clinic/Lclinic.webm"
-        ]
+        "images": ["/videos/clinic/Lclinic.webm"]
       },
       "auth": {
         "title": "",

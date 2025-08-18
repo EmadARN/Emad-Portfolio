@@ -6,6 +6,7 @@ import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import RobotFollower from "./ui/RobotFollower";
 import ContactUsIcon from "./ui/ContactUsIcon";
+import { BiDownload } from "react-icons/bi";
 
 const Hero = () => {
   return (
@@ -53,13 +54,25 @@ const Hero = () => {
                 <RobotFollower />
               </div>
             </div>
-            <a href="#about">
-              <MagicButton
-                title="Show my work"
-                icon={<FaLocationArrow />}
-                position="right"
-              />
-            </a>
+            <div className="flex flex-col md:flex-row gap-4 mt-8 justify-center">
+              {/* دکمه Show my work */}
+              <a href="#about">
+                <MagicButton
+                  title="Show my work"
+                  icon={<FaLocationArrow />}
+                  position="right"
+                />
+              </a>
+
+              {/* دکمه دانلود CV */}
+              <a href="/file/EmadAraban-resume.pdf" download>
+                <MagicButton
+                  title="Download CV"
+                  icon={<BiDownload />}
+                  position="right"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>

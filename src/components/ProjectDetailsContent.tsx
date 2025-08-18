@@ -20,6 +20,7 @@ interface Project {
   description: string;
   time_line: string;
   live_link: string;
+  github_link: string;
   technologies?: string[];
   details: {
     landing: Section;
@@ -46,6 +47,8 @@ const simulateDataFetch = async () => {
 
 export default function ProjectDetailsContent({ project }: Props) {
   const [isLoading, setIsLoading] = useState(true);
+  console.log(project);
+
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -131,31 +134,37 @@ export default function ProjectDetailsContent({ project }: Props) {
         </h2>
         <p className="text-sm pl-2 text-gray-500 mb-4">{project.time_line}</p>
       </div>
-      <div className="w-1/2 pl-1">
-        <h2 className="md:text-2xl font-bold text-nowrap text-purple-600 mb-4 ">
-          <p className="flex items-center gap-3">
-            <FaGithubSquare /> github
-          </p>
-        </h2>
-        <Link
-          className="text-blue-500 pl-1 mb-6 block"
-          href={socialMedia[0].link}
-        >
-          {socialMedia[0].name}
-        </Link>
-      </div>
-      <div className="w-1/2">
-        <h2 className="md:text-2xl font-bold text-nowrap text-purple-600 mb-4 ">
-          📱 Web demo
-        </h2>
-        <Link
-          href={project.live_link}
-          target="_blank"
-          className="text-blue-500 pl-2 mb-6 block"
-        >
-          View Live
-        </Link>
-      </div>
+      {project.github_link && (
+        <div className="w-1/2 pl-1">
+          <h2 className="md:text-2xl font-bold text-nowrap text-purple-600 mb-4 ">
+            <p className="flex items-center gap-3">
+              <FaGithubSquare /> github
+            </p>
+          </h2>
+          <Link
+            className="text-blue-500 pl-1 mb-6 block"
+            href={project.github_link}
+            target="_blank"
+          >
+            Github
+          </Link>
+        </div>
+      )}
+
+      {project.live_link && (
+        <div className="w-1/2">
+          <h2 className="md:text-2xl font-bold text-nowrap text-purple-600 mb-4 ">
+            📱 Web demo
+          </h2>
+          <Link
+            href={project.live_link}
+            target="_blank"
+            className="text-blue-500 pl-2 mb-6 block"
+          >
+            View Live
+          </Link>
+        </div>
+      )}
 
       {project.technologies && project.technologies.length > 0 && (
         <div className="py-6">
