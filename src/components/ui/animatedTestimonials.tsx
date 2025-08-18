@@ -1,6 +1,6 @@
 "use client";
 
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
+import { IconArrowLeft, IconArrowRight, IconX } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -31,12 +31,11 @@ export const AnimatedTestimonials = ({
     setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  const isActive = (index: number) => {
-    return index === active;
-  };
+  const isActive = (index: number) => index === active;
 
-  const handleImageClick = (src: string) => {
+  const handleImageClick = (src: string, index: number) => {
     setSelectedImage(src);
+    setActive(index);
     setIsModalOpen(true);
   };
 
@@ -52,9 +51,7 @@ export const AnimatedTestimonials = ({
     }
   }, [autoplay]);
 
-  const randomRotateY = () => {
-    return Math.floor(Math.random() * 21) - 10;
-  };
+  const randomRotateY = () => Math.floor(Math.random() * 21) - 10;
 
   return (
     <div className="relative mx-auto w-full font-sans antialiased">
@@ -87,12 +84,9 @@ export const AnimatedTestimonials = ({
                     z: 100,
                     rotate: randomRotateY(),
                   }}
-                  transition={{
-                    duration: 0.4,
-                    ease: "easeInOut",
-                  }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
                   className="absolute inset-0 origin-bottom cursor-pointer"
-                  onClick={() => handleImageClick(testimonial.src)}
+                  onClick={() => handleImageClick(testimonial.src, index)}
                 >
                   <Image
                     src={testimonial.src}
@@ -108,25 +102,26 @@ export const AnimatedTestimonials = ({
             </AnimatePresence>
           </div>
         </div>
+
         <div className="absolute -bottom-12 left-1/2 translate-x-[-50%]">
           <div className="flex gap-4 pt-12">
             <button
               onClick={handlePrev}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-purple-700 hover:bg-purple-600"
             >
-              <IconArrowLeft className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
+              <IconArrowLeft className="h-5 w-5 text-white transition-transform duration-300 group-hover/button:rotate-12" />
             </button>
             <button
               onClick={handleNext}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-purple-700 hover:bg-purple-600"
             >
-              <IconArrowRight className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
+              <IconArrowRight className="h-5 w-5 text-white transition-transform duration-300 group-hover/button:-rotate-12" />
             </button>
           </div>
         </div>
       </div>
 
-      {/* مودال برای بزرگ‌نمایی تصویر */}
+      {/* مودال برای بزرگ‌نمایی تصویر با امکان جابجایی */}
       <AnimatePresence>
         {isModalOpen && selectedImage && (
           <motion.div
@@ -135,15 +130,29 @@ export const AnimatedTestimonials = ({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
-            onClick={closeModal}
+            onClick={closeModal} // 👈 کلیک روی بک‌گراند مودال رو می‌بنده
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="relative w-[90vw] h-[90vh] max-w-4xl"
+              className="relative w-[90vw] h-[90vh] max-w-4xl flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()} // 👈 جلوگیری از بستن مودال هنگام کلیک روی تصویر
             >
+              {/* دکمه قبلی */}
+              <button
+                onClick={() => {
+                  const newIndex =
+                    (active - 1 + testimonials.length) % testimonials.length;
+                  setActive(newIndex);
+                  setSelectedImage(testimonials[newIndex].src);
+                }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-purple-500 text-4xl font-bold hover:text-purple-400"
+              >
+                <IconArrowLeft size={40} />
+              </button>
+
               <Image
                 src={selectedImage}
                 alt="Enlarged Image"
@@ -151,11 +160,25 @@ export const AnimatedTestimonials = ({
                 className="object-contain rounded-lg"
                 sizes="(max-width: 768px) 90vw, 80vw"
               />
+
+              {/* دکمه بعدی */}
+              <button
+                onClick={() => {
+                  const newIndex = (active + 1) % testimonials.length;
+                  setActive(newIndex);
+                  setSelectedImage(testimonials[newIndex].src);
+                }}
+                className="absolute right-4 top-1/2 -translate-y-1/2  text-2xl font-bold rounded-md  bg-violet-950 hover:bg-violet-900"
+              >
+                <IconArrowRight size={30} color="#fff" />
+              </button>
+
+              {/* دکمه بستن */}
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 bg-violet-950 hover:bg-violet-900 text-white px-3 py-2 rounded-md shadow"
+                className="absolute top-4 right-4 bg-purple-700 hover:bg-purple-600 p-2 rounded-md shadow text-white bg-violet-950 hover:bg-violet-900"
               >
-                ✕
+                <IconX size={24} />
               </button>
             </motion.div>
           </motion.div>

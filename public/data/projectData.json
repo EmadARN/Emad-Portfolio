@@ -67,8 +67,8 @@
     "title": "MetallugicalWeb",
     "button": "Explore Web",
     "cover_image": "/projectImages/metalluargy/cover.png",
-    "description": "An experimental take on modern cityscapes. We focused on interactive UI animations and real-time data updates.",
-    "time_line": "March 2024 - April 2024",
+    "description": "This project was developed for the Metallurgy Research Center at Islamic Azad University, aimed at streamlining the process of managing laboratory services and bookings. The platform enables the admin team to upload and manage all available services, while customers can easily browse, reserve, and interact with the system.",
+    "time_line": "jun 2025 - Feb 2025",
     "github_link": "https://github.com/RezaFarzipour/Goldstore-Final-Version",
     "live_link": "https://urban-dreams.vercel.app",
     "details": {
@@ -79,29 +79,59 @@
         "images": ["/videos/metalluargy/Lmetalluargy.webm"]
       },
       "auth": {
-        "title": "",
-        "desc": "",
-        "images": []
+        "title": "Authentication-page",
+        "desc": "This sequence illustrates the user registration process. Initially, the user enters their phone number and receives an OTP to verify their identity and ensure secure login. In the second step, the system checks the OTP and determines whether it is the user's first login. First-time users are redirected to a registration form to fill in their personal information, while returning users are directed to the appropriate dashboard based on their role — Admin or Customer. For enhanced security, both the access token and refresh token are stored in HTTP-only cookies. The registration form uses the react-hook-form library to manage input validation efficiently and smoothly.",
+        "images": [
+          "/projectImages/metalluargy/auth1.png",
+          "/projectImages/metalluargy/auth2.png",
+          "/projectImages/metalluargy/auth3.png"
+        ]
       },
       "adminPanel": {
-        "title": "",
-        "desc": "",
-        "images": []
+        "title": "Admin-panel",
+        "desc": "These images showcase different sections of the laboratory management dashboard, providing comprehensive control over users, reservations, services, and blog posts. At the top, summary cards display key metrics such as the number of users, reservations, services, and blog entries, while the Recent Reservations section shows details like user name, contact, service type, dates, and payment status. User and service management allows editing, deleting, or adding new items, including assigning user roles, service details, and uploading images. The Blog section covers managing categories and posts, with new post creation done in two steps: first, entering main details, selecting categories, and uploading a cover image; second, adding a header description and main content using the Tiptap rich-text editor. The dashboard’s design is clean and intuitive, enabling quick access to important data for efficient administration.",
+        "images": [
+          "/projectImages/metalluargy/adminPanel/1.png",
+          "/projectImages/metalluargy/adminPanel/2.png",
+          "/projectImages/metalluargy/adminPanel/3.png",
+          "/projectImages/metalluargy/adminPanel/4.png",
+          "/projectImages/metalluargy/adminPanel/4_1.png",
+          "/projectImages/metalluargy/adminPanel/4_2.png",
+          "/projectImages/metalluargy/adminPanel/5.png",
+          "/projectImages/metalluargy/adminPanel/6.png",
+          "/projectImages/metalluargy/adminPanel/6_1.png",
+          "/projectImages/metalluargy/adminPanel/7.png"
+        ]
       },
       "userPanel": {
-        "title": "",
-        "desc": "",
-        "images": []
+        "title": "User-panel",
+        "desc": "Each reservation entry includes details such as the user name, phone number, service name, reservation duration, payment status, reservation dates, and the latest step in the process. Users can view all their active reservations along with these details and track the most recent completed step of each reservation. By clicking the action button, they are redirected to the corresponding step to continue and complete the reservation process. Additionally, users can create a new reservation via the Add button, while the Reports feature provides access to detailed records of canceled or successfully completed reservations, including all related information.",
+        "images": [
+          "/projectImages/metalluargy/userPanel/customer1.png",
+          "/projectImages/metalluargy/userPanel/customer2.png",
+          "/projectImages/metalluargy/userPanel/customer3.png"
+        ]
       },
       "receptionPanel": {
-        "title": "",
-        "desc": "",
-        "images": []
+        "title": "Reservation",
+        "desc": "The reservation process begins when the user selects a service either from the Services section or from their dashboard. After clicking the Reserve button, a modal opens with detailed information such as price, description, and available dates predefined by the admin. Once a date is chosen, the request moves to the approval stage, where the customer sees a waiting screen and the admin enters details like rental duration, price, and notes. At this point, the admin can approve, reject, or cancel the request, with rejections sending the process one step back. After approval, the customer proceeds to payment by uploading a receipt, which the admin reviews before granting final confirmation. Once approved, the reservation is successfully completed, and both the customer and admin receive a confirmation with full details",
+        "images": [
+          "/projectImages/metalluargy/reserve/reserve1.png",
+          "/projectImages/metalluargy/reserve/reserve2.png",
+          "/projectImages/metalluargy/reserve/reserve3.png",
+          "/projectImages/metalluargy/reserve/reserve4.png",
+          "/projectImages/metalluargy/reserve/reserve5.png",
+          "/projectImages/metalluargy/reserve/reserve6.png",
+          "/projectImages/metalluargy/reserve/reserve7.png"
+        ]
       },
       "more": {
-        "title": "",
-        "desc": "",
-        "images": []
+        "title": "Services",
+        "desc": "In the Services section, users can browse all available devices added by the admin. Each device includes a quick overview, and by selecting 'View More' the user is redirected to a detailed page. The details page provides comprehensive information such as device name, description, image gallery, and available reservation dates. From here, the user can continue directly into the reservation process for the selected device.",
+        "images": [
+          "/projectImages/metalluargy/service1.png",
+          "/projectImages/metalluargy/service2.png"
+        ]
       }
     },
     "technologies": [
@@ -123,29 +153,49 @@
     "button": "Explore Web",
     "cover_image": "/projectImages/clinic/cover.png",
     "description": "Inspired by cyberpunk aesthetics, this project features WebGL backgrounds and futuristic UI themes.",
-    "time_line": "April 2024 - May 2024",
-    "github_link": "https://github.com/RezaFarzipour/Goldstore-Final-Version",
+    "time_line": "May 7, 2024 - Dec 2022",
+    "github_link": "https://github.com/EmadARN/Laser-Hair-Removal-Clinic",
     "live_link": "https://neon-nights.vercel.app",
     "details": {
       "landing": {
         "title": "landing-page",
-        "desc": "A seamless platform for buying and selling molten gold with a clean and professional user interface.Includes a dedicated customer panel for managing orders and tracking transaction status.An admin dashboard with full control over users, orders, and detailed reporting.",
+        "desc": "This platform is specially designed for laser hair removal clinics to make the work easier for admins, receptionists, and clients.\n\nIt includes three separate dashboards, each made for a different type of user:\n\nAdmin Dashboard,\nReceptionist Dashboard,\nand Client Dashboard,\n\nEach dashboard has its own features that help manage daily tasks, improve communication, and make the overall process faster and more organized.\nMore details about each dashboard and its features are provided below.",
         "images": ["/videos/clinic/Lclinic.webm"]
       },
       "auth": {
-        "title": "",
-        "desc": "",
-        "images": []
+        "title": "Authentication-page",
+        "desc": "This process begins when the user enters their phone number and receives a one-time password (OTP) for verification. After entering the OTP, the system confirms their identity and grants access to the customer dashboard. For security, admin and receptionist logins are separated from the customer flow, and authentication tokens are stored securely using cookies to prevent unauthorized access.",
+        "images": [
+          "/projectImages/clinic/auth1.png",
+          "/projectImages/clinic/auth2.png",
+          "/projectImages/clinic/auth2.png"
+        ]
       },
       "adminPanel": {
-        "title": "",
-        "desc": "",
-        "images": []
+        "title": "Admin-panel",
+        "desc": "The Admin Dashboard provides a complete set of tools to manage the clinic efficiently. It includes features such as a home page with daily client statistics, estimated revenue, and income charts, as well as a weekly calendar for scheduling operators and managing appointments. Admins can oversee staff roles, add or remove employees, and manage laser treatment areas with customizable pricing and durations. The dashboard also provides access to client lists and detailed customer profiles, including medical history and session records. Additionally, settings allow the admin to configure working hours, adjust reservation rules, and update security preferences, ensuring smooth operations across the platform.",
+        "images": [
+          "/projectImages/clinic/adminPanel/admin1.png",
+          "/projectImages/clinic/adminPanel/admin2.png",
+          "/projectImages/clinic/adminPanel/admin3.png",
+          "/projectImages/clinic/adminPanel/admin4.png",
+          "/projectImages/clinic/adminPanel/admin5.png",
+          "/projectImages/clinic/adminPanel/admin6.png",
+          "/projectImages/clinic/adminPanel/admin7.png"
+        ]
       },
       "userPanel": {
-        "title": "",
-        "desc": "",
-        "images": []
+        "title": "User-panel",
+        "desc": "The Customer Dashboard is designed to give users full control over their profile and reservations. From the home page, clients can create new bookings, view past session reports, and manage their personal information such as name, ID, medical history, and contact details. The reservation process is simple and step-based: users first select the desired treatment areas, then choose a suitable date and time from the available schedule defined by the admin. In the final step, they review and confirm all details before completing the booking. Once reservations are made, clients can track their status and view session details, including treatment areas, schedule, and total cost, through the Session Reports section.",
+        "images": [
+          "/projectImages/clinic/userPanel/customer1.png",
+          "/projectImages/clinic/userPanel/customer2.png",
+          "/projectImages/clinic/userPanel/customer3.png",
+          "/projectImages/clinic/userPanel/customer4.png",
+          "/projectImages/clinic/userPanel/customer5.png",
+          "/projectImages/clinic/userPanel/customer6.png",
+          "/projectImages/clinic/userPanel/customer7.png"
+        ]
       },
       "receptionPanel": {
         "title": "",
