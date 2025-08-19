@@ -35,7 +35,7 @@ interface Project {
     adminPanel: Section;
     userPanel: Section;
     receptionPanel: Section;
-    blogs?: Section;
+    blogs: Section;
     more: Section;
   };
 }
