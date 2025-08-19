@@ -6,15 +6,21 @@ import SkeletonProjectDetails from "./ui/skelton/SkeletonProjectDetails";
 import { AnimatedTestimonials } from "./ui/animatedTestimonials";
 import { StickyScroll } from "./ui/StickyScrolReveal";
 import Footer from "./Footer";
-import { socialMedia } from "@/constants";
 import { FaGithubSquare } from "react-icons/fa";
-
+import * as MdIcons from "react-icons/md";
+import * as FaIcons from "react-icons/fa";
+import * as TbIcons from "react-icons/tb";
+import * as GiIcons from "react-icons/gi";
+import * as CiIcons from "react-icons/ci";
 interface Section {
   title: string;
   desc: string;
   images: string[];
 }
-
+interface Feature {
+  icon: string;
+  text: string;
+}
 interface Project {
   title: string;
   description: string;
@@ -22,6 +28,7 @@ interface Project {
   live_link: string;
   github_link: string;
   technologies?: string[];
+  KeyFeatures: Feature[];
   details: {
     landing: Section;
     auth: Section;
@@ -48,7 +55,13 @@ const simulateDataFetch = async () => {
 export default function ProjectDetailsContent({ project }: Props) {
   const [isLoading, setIsLoading] = useState(true);
   console.log(project);
-
+  const iconsData = {
+    ...MdIcons,
+    ...FaIcons,
+    ...TbIcons,
+    ...GiIcons,
+    ...CiIcons,
+  };
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -124,7 +137,7 @@ export default function ProjectDetailsContent({ project }: Props) {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className="max-w-6xl mx-auto p-6">
       <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
       <p className="text-gray-300 mb-4">{project.description}</p>
 
@@ -165,23 +178,30 @@ export default function ProjectDetailsContent({ project }: Props) {
           </Link>
         </div>
       )}
-      {/* <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
-        {project.KeyFeatures.map((feature, index) => {
-          const Icon = icons[feature.icon];
-          return (
-            <div key={index} className="flex items-center gap-3">
-              <div className="bg-blue-100 text-purple-600 p-2 rounded-full">
-                <Icon size={20} />
+      <div className="mt-6">
+        <h2 className="text-2xl font-bold text-purple-600 mb-6">
+          🔑 Key Features
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
+          {project.KeyFeatures.map((feature, index) => {
+            const Icon = iconsData[feature.icon as keyof typeof iconsData];
+            return (
+              <div key={index} className="flex items-start gap-3">
+                <div className="bg-violet-800 text-purple-600 p-2 rounded-md flex-shrink-0">
+                  {Icon && <Icon size={20} />}
+                </div>
+                <p className="text-sm md:text-lg text-white text-justify">
+                  {feature.text}
+                </p>
               </div>
-              <p className="text-sm md:text-lg text-white text-justify">
-                {feature.text}
-              </p>
-            </div>
-          );
-        })}
-      </div> */}
+            );
+          })}
+        </div>
+      </div>
+
       {project.technologies && project.technologies.length > 0 && (
-        <div className="py-6">
+        <div className="py-8 ">
           <h2 className="text-2xl font-bold text-purple-600 mb-4">
             🔧 Technologies Used
           </h2>

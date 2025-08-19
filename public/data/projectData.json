@@ -169,6 +169,14 @@
           "/projectImages/metalluargy/reserve/reserve7.png"
         ]
       },
+      "blogs": {
+        "title": "Blog",
+        "desc": "This section is designed to showcase articles and updates. Each blog includes images, a title, and a brief description for users to browse and stay informed.",
+        "images": [
+          "/projectImages/metalluargy/blog1.png",
+          "/projectImages/metalluargy/blog2.png"
+        ]
+      },
       "more": {
         "title": "Services",
         "desc": "Users can browse all available devices, view details, and continue directly into the reservation process.",
