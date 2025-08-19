@@ -199,7 +199,7 @@ export default function ProjectDetailsContent({ project }: Props) {
                 <div className="bg-violet-800 text-purple-600 p-2 rounded-md flex-shrink-0">
                   {Icon && <Icon size={20} />}
                 </div>
-                <p className="text-sm md:text-lg text-white text-justify">
+                <p className="text-sm md:text-md text-white ">
                   {feature.text}
                 </p>
               </div>
