@@ -35,6 +35,7 @@ interface Project {
     adminPanel: Section;
     userPanel: Section;
     receptionPanel: Section;
+    blogs: Section;
     more: Section;
   };
 }
@@ -79,7 +80,7 @@ export default function ProjectDetailsContent({ project }: Props) {
     return <SkeletonProjectDetails />;
   }
 
-  const { adminPanel, userPanel, receptionPanel, landing, auth, more } =
+  const { adminPanel, userPanel, receptionPanel, landing, auth, blogs, more } =
     project.details;
 
   const landingSection =
@@ -109,7 +110,14 @@ export default function ProjectDetailsContent({ project }: Props) {
         }
       : null;
 
-  const dynamicContent = [auth, adminPanel, userPanel, receptionPanel, more]
+  const dynamicContent = [
+    auth,
+    adminPanel,
+    userPanel,
+    receptionPanel,
+    blogs,
+    more,
+  ]
     .filter(
       (section) => section.title || section.desc || section.images.length > 0
     )
