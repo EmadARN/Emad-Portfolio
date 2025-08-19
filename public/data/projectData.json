@@ -45,6 +45,11 @@
           "/projectImages/goldWeb/3.png"
         ]
       },
+      "panelAuth": {
+        "title": "",
+        "desc": "",
+        "images": []
+      },
       "adminPanel": {
         "title": "Admin-panel",
         "desc": "The admin dashboard provides a comprehensive management panel for full control and oversight of the platform’s various sections. It includes modules for managing inventory, handling gold and cash withdrawal requests, and configuring system settings. A dedicated reports section offers detailed views of transactions, gold purchases, and sales, enabling precise monitoring of financial activities.",
@@ -135,6 +140,11 @@
           "/projectImages/metalluargy/auth2.png",
           "/projectImages/metalluargy/auth3.png"
         ]
+      },
+      "panelAuth": {
+        "title": "",
+        "desc": "",
+        "images": []
       },
       "adminPanel": {
         "title": "Admin-panel",
@@ -245,6 +255,14 @@
           "/projectImages/clinic/auth1.png",
           "/projectImages/clinic/auth2.png",
           "/projectImages/clinic/auth2.png"
+        ]
+      },
+      "panelAuth": {
+        "title": "Panel-Authentication-page",
+        "desc": "On this login page, both Admin and Reception roles can access the panel using their username and password. Users can also use the 'Forgot Password' feature to reset their password.",
+        "images": [
+          "/projectImages/clinic/panelAuth1.png",
+          "/projectImages/clinic/panelAuth2.png"
         ]
       },
       "adminPanel": {

@@ -32,6 +32,7 @@ interface Project {
   details: {
     landing: Section;
     auth: Section;
+    panelAuth: Section;
     adminPanel: Section;
     userPanel: Section;
     receptionPanel: Section;
@@ -80,8 +81,16 @@ export default function ProjectDetailsContent({ project }: Props) {
     return <SkeletonProjectDetails />;
   }
 
-  const { adminPanel, userPanel, receptionPanel, landing, auth, blogs, more } =
-    project.details;
+  const {
+    adminPanel,
+    userPanel,
+    receptionPanel,
+    landing,
+    auth,
+    panelAuth,
+    blogs,
+    more,
+  } = project.details;
 
   const landingSection =
     landing.images.length > 0
@@ -112,6 +121,7 @@ export default function ProjectDetailsContent({ project }: Props) {
 
   const dynamicContent = [
     auth,
+    panelAuth,
     adminPanel,
     userPanel,
     receptionPanel,
@@ -199,9 +209,7 @@ export default function ProjectDetailsContent({ project }: Props) {
                 <div className="bg-violet-800 text-purple-600 p-2 rounded-md flex-shrink-0">
                   {Icon && <Icon size={20} />}
                 </div>
-                <p className="text-sm md:text-md text-white ">
-                  {feature.text}
-                </p>
+                <p className="text-sm md:text-md text-white ">{feature.text}</p>
               </div>
             );
           })}
