@@ -187,7 +187,7 @@ export const workExperience = [
     desc: `Developed and maintained user-facing features using modern frontend technologies.
   Built web-based platforms using React.js, Next.js, TypeScript, MUI, Chakra UI, Tailwind CSS, Hero UI, TanStack Query, Redux Toolkit, and more.`,
     className: "md:col-span-2",
-    timeLine: "May, 2024 - Aug, 2025",
+    timeLine: "May, 2023 - Aug, 2025",
     thumbnail: "/exp1.svg",
   },
   {
