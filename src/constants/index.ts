@@ -195,7 +195,7 @@ export const workExperience = [
     title: "Self-Employed / Freelance Frontend Developer",
     desc: `Worked independently on frontend projects to strengthen practical skills and stay updated with modern technologies.
   Focused on learning and implementing best practices in React.js, Next.js, TypeScript, Redux Toolkit, Tailwind CSS, and more through hands-on projects and tutorials.`,
-    timeLine: "Oct, 2022 - Jun, 2024",
+    timeLine: "Oct, 2022 - Jun, 2023",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
