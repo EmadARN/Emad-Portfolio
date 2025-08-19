@@ -137,8 +137,8 @@ export const AnimatedTestimonials = ({
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="relative w-[90vw] h-[90vh] max-w-4xl flex items-center justify-center"
-              onClick={(e) => e.stopPropagation()} // 👈 جلوگیری از بستن مودال هنگام کلیک روی تصویر
+              className="relative w-[90vw] h-[60vh] max-w-4xl flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()} // 👈 جلوگیری از بستن مودال هنگام کلیک روی تص5ویر
             >
               {/* دکمه قبلی */}
               <button
@@ -148,9 +148,9 @@ export const AnimatedTestimonials = ({
                   setActive(newIndex);
                   setSelectedImage(testimonials[newIndex].src);
                 }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-purple-500 text-4xl font-bold hover:text-purple-400"
+                className="absolute left-4 top-1/2 -translate-y-1/2 rounded-md bg-violet-950 hover:bg-violet-900 text-4xl font-bold z-40 "
               >
-                <IconArrowLeft size={40} />
+                <IconArrowLeft size={30} color="#fff" />
               </button>
 
               <Image
@@ -176,7 +176,7 @@ export const AnimatedTestimonials = ({
               {/* دکمه بستن */}
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 bg-purple-700 hover:bg-purple-600 p-2 rounded-md shadow text-white bg-violet-950 hover:bg-violet-900"
+                className="absolute top-4  right-4 bg-purple-700 hover:bg-purple-600 p-2 rounded-md shadow text-white bg-violet-950 hover:bg-violet-900"
               >
                 <IconX size={24} />
               </button>

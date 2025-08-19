@@ -69,7 +69,7 @@
     "cover_image": "/projectImages/metalluargy/cover.png",
     "description": "This project was developed for the Metallurgy Research Center at Islamic Azad University, aimed at streamlining the process of managing laboratory services and bookings. The platform enables the admin team to upload and manage all available services, while customers can easily browse, reserve, and interact with the system.",
     "time_line": "jun 2025 - Feb 2025",
-    "github_link": "https://github.com/RezaFarzipour/Goldstore-Final-Version",
+    "github_link": "https://github.com/RezaFarzipour/Metallugical_Research_Center",
     "live_link": "https://urban-dreams.vercel.app",
     "details": {
       "landing": {
@@ -129,8 +129,8 @@
         "title": "Services",
         "desc": "In the Services section, users can browse all available devices added by the admin. Each device includes a quick overview, and by selecting 'View More' the user is redirected to a detailed page. The details page provides comprehensive information such as device name, description, image gallery, and available reservation dates. From here, the user can continue directly into the reservation process for the selected device.",
         "images": [
-          "/projectImages/metalluargy/service1.png",
-          "/projectImages/metalluargy/service2.png"
+          "/projectImages/metalluargy/services1.png",
+          "/projectImages/metalluargy/services2.png"
         ]
       }
     },
@@ -189,7 +189,6 @@
         "desc": "The Customer Dashboard is designed to give users full control over their profile and reservations. From the home page, clients can create new bookings, view past session reports, and manage their personal information such as name, ID, medical history, and contact details. The reservation process is simple and step-based: users first select the desired treatment areas, then choose a suitable date and time from the available schedule defined by the admin. In the final step, they review and confirm all details before completing the booking. Once reservations are made, clients can track their status and view session details, including treatment areas, schedule, and total cost, through the Session Reports section.",
         "images": [
           "/projectImages/clinic/userPanel/customer1.png",
-          "/projectImages/clinic/userPanel/customer2.png",
           "/projectImages/clinic/userPanel/customer3.png",
           "/projectImages/clinic/userPanel/customer4.png",
           "/projectImages/clinic/userPanel/customer5.png",
@@ -217,97 +216,5 @@
       "/tech/formik.png",
       "/tech/python.png"
     ]
-  },
-  {
-    "id": "AdliKaraWeb",
-    "title": "AdliKaraWeb",
-    "button": "Explore Web",
-    "cover_image": "/projectImages/adllikara/cover.png",
-    "description": "A minimalistic storytelling experience in the heart of a digital desert. Built with Next.js and Chakra UI.",
-    "time_line": "May 2024 - Present",
-    "github_link": "https://github.com/RezaFarzipour/Goldstore-Final-Version",
-    "live_link": "https://desert-whispers.vercel.app",
-    "details": {
-      "landing": {
-        "title": "",
-        "desc": "",
-        "images": ["/videos/adllikara/Ladllikara.webm"]
-      },
-      "auth": {
-        "title": "",
-        "desc": "",
-        "images": []
-      },
-      "adminPanel": {
-        "title": "",
-        "desc": "",
-        "images": []
-      },
-      "userPanel": {
-        "title": "",
-        "desc": "",
-        "images": []
-      },
-      "receptionPanel": {
-        "title": "",
-        "desc": "",
-        "images": []
-      },
-      "more": {
-        "title": "",
-        "desc": "",
-        "images": []
-      }
-    },
-    "technologies": [
-      "/tech/next.png",
-      "/tech/rest-api.png",
-      "/tech/mui.png",
-      "/tech/gsap.png",
-      "/tech/formik.png",
-      "/tech/python.png"
-    ]
-  },
-  {
-    "id": "EcommerceWeb",
-    "title": "EcommerceWeb",
-    "button": "Explore Web",
-    "cover_image": "/b1.png",
-    "description": "A minimalistic storytelling experience in the heart of a digital desert. Built with Next.js and Chakra UI.",
-    "time_line": "May 2024 - Present",
-    "github_link": "https://github.com/RezaFarzipour/Goldstore-Final-Version",
-    "live_link": "https://desert-whispers.vercel.app",
-    "details": {
-      "landing": {
-        "title": "",
-        "desc": "",
-        "images": ["/videos/clinic/Lclinic.webm"]
-      },
-      "auth": {
-        "title": "",
-        "desc": "",
-        "images": []
-      },
-      "adminPanel": {
-        "title": "",
-        "desc": "",
-        "images": []
-      },
-      "userPanel": {
-        "title": "",
-        "desc": "",
-        "images": []
-      },
-      "receptionPanel": {
-        "title": "",
-        "desc": "",
-        "images": []
-      },
-      "more": {
-        "title": "",
-        "desc": "",
-        "images": []
-      }
-    }
   }
 ]
