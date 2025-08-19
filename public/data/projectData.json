@@ -68,6 +68,11 @@
         "desc": "",
         "images": []
       },
+      "blogs": {
+        "title": "",
+        "desc": "",
+        "images": []
+      },
       "more": {
         "title": "",
         "desc": "",
@@ -268,6 +273,11 @@
         ]
       },
       "receptionPanel": {
+        "title": "",
+        "desc": "",
+        "images": []
+      },
+      "blogs": {
         "title": "",
         "desc": "",
         "images": []

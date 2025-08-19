@@ -35,7 +35,7 @@ interface Project {
     adminPanel: Section;
     userPanel: Section;
     receptionPanel: Section;
-    blogs: Section;
+    blogs?: Section;
     more: Section;
   };
 }
@@ -145,7 +145,7 @@ export default function ProjectDetailsContent({ project }: Props) {
   }
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
+    <div className="max-w-4xl mx-auto p-6">
       <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
       <p className="text-gray-300 mb-4">{project.description}</p>
 
