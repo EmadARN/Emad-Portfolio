@@ -165,7 +165,21 @@ export default function ProjectDetailsContent({ project }: Props) {
           </Link>
         </div>
       )}
-
+      {/* <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
+        {project.KeyFeatures.map((feature, index) => {
+          const Icon = icons[feature.icon];
+          return (
+            <div key={index} className="flex items-center gap-3">
+              <div className="bg-blue-100 text-purple-600 p-2 rounded-full">
+                <Icon size={20} />
+              </div>
+              <p className="text-sm md:text-lg text-white text-justify">
+                {feature.text}
+              </p>
+            </div>
+          );
+        })}
+      </div> */}
       {project.technologies && project.technologies.length > 0 && (
         <div className="py-6">
           <h2 className="text-2xl font-bold text-purple-600 mb-4">
