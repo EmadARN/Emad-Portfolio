@@ -393,10 +393,6 @@
         "images": []
       }
     },
-    "technologies": [
-      "/tech/nextjs.png",
-      "/tech/gsap.png",
-      "/tech/mui.png"
-    ]
+    "technologies": ["/tech/next.png", "/tech/gsap.png", "/tech/mui.png"]
   }
 ]
