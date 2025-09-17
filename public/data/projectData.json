@@ -315,5 +315,88 @@
       "/tech/formik.png",
       "/tech/python.png"
     ]
+  },
+  {
+    "id": "Adllikara-WebTeam",
+    "title": "Adllikara Web Team",
+    "button": "Explore Website",
+    "cover_image": "/projectImages/adlliKara/cover.png",
+    "description": "A modern and creative website built for showcasing the Web Team’s portfolio, services, and contact channels. Designed with smooth GSAP animations, light/dark theme support, and multilingual support to provide an engaging user experience.",
+    "time_line": "April 2022 - June 2022",
+    "github_link": "https://github.com/EmadARN/Web-Team",
+    "live_link": "https://adly-webteam.vercel.app",
+    "KeyFeatures": [
+      {
+        "icon": "MdLanguage",
+        "text": "Bilingual Support: Seamless switch between Persian and English languages."
+      },
+      {
+        "icon": "MdDarkMode",
+        "text": "Light/Dark Mode toggle for better accessibility and user preference."
+      },
+      {
+        "icon": "GiTeamIdea",
+        "text": "Team Showcase section highlighting each member’s role, skills, and achievements."
+      },
+      {
+        "icon": "MdWork",
+        "text": "Portfolio section presenting previous projects with detailed case studies."
+      },
+      {
+        "icon": "Gi3DMeeple",
+        "text": "Smooth GSAP-based animations for interactive and engaging user experience."
+      }
+    ],
+    "challenges": [
+      "Implementing fully responsive animations with GSAP across different devices.",
+      "Maintaining clean UI/UX while supporting bilingual and theme toggle features."
+    ],
+    "details": {
+      "landing": {
+        "title": "Landing-page",
+        "desc": "The landing page acts as the main gateway for visitors. It introduces the Web Team with smooth GSAP animations, engaging text transitions, and call-to-action buttons that guide users toward portfolio and contact sections.",
+        "images": ["/videos/adllikara/Ladllikara.webm"]
+      },
+      "auth": {
+        "title": "",
+        "desc": "",
+        "images": []
+      },
+      "panelAuth": {
+        "title": "",
+        "desc": "",
+        "images": []
+      },
+      "adminPanel": {
+        "title": "",
+        "desc": "",
+        "images": []
+      },
+      "userPanel": {
+        "title": "",
+        "desc": "",
+        "images": []
+      },
+      "receptionPanel": {
+        "title": "",
+        "desc": "",
+        "images": []
+      },
+      "blogs": {
+        "title": "",
+        "desc": "",
+        "images": []
+      },
+      "more": {
+        "title": "",
+        "desc": "",
+        "images": []
+      }
+    },
+    "technologies": [
+      "/tech/nextjs.png",
+      "/tech/gsap.png",
+      "/tech/mui.png"
+    ]
   }
 ]
